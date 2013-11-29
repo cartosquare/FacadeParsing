@@ -11,6 +11,8 @@ CommandLineArgument::CommandLineArgument() {
 	resolution_ = 0.2;
 	resample_resolution_[0] = resample_resolution_[1] = resample_resolution_[2] = 0.0;
 	load_qtable_ = 0;
+
+	ready_radius_outlier_remover_ = ready_refine_grid_ = ready_resample_ = ready_statiscal_outlier_remover_ = false;
 }
 
 bool CommandLineArgument::ParseCommandLine(int argc, char** argv) {
@@ -124,10 +126,33 @@ bool CommandLineArgument::ReadParameters() {
 				for (rapidjson::SizeType i = 0; i < margin.Size(); ++i) {
 					margin_[i] = margin[i].GetInt();
 				}
+				ready_refine_grid_ = true;
 			}
 		}	
 	}
 
+	if (document.HasMember("radius_outlier_remover")) {
+		const rapidjson::Value& radius_outlier_remover = document["radius_outlier_remover"];
+		if(radius_outlier_remover.IsArray()) {
+			if (radius_outlier_remover.Size() == 2) {
+				for (rapidjson::SizeType i = 0; i < radius_outlier_remover.Size(); ++i) {
+					radius_outlier_remover_[i] = radius_outlier_remover[i].GetDouble();
+				}
+				ready_radius_outlier_remover_ = true;
+			}
+		}	
+	}
+	if (document.HasMember("static_outlier_remover")) {
+		const rapidjson::Value& static_outlier_remover = document["static_outlier_remover"];
+		if(static_outlier_remover.IsArray()) {
+			if (static_outlier_remover.Size() == 4) {
+				for (rapidjson::SizeType i = 0; i < static_outlier_remover.Size(); ++i) {
+					statiscal_outlier_remover_[i] = static_outlier_remover[i].GetDouble();
+				}
+				ready_statiscal_outlier_remover_ = true;
+			}
+		}	
+	}
 	if (document.HasMember("resample")) {
 		const rapidjson::Value& resample = document["resample"];
 		if(resample.IsArray()) {
@@ -135,6 +160,7 @@ bool CommandLineArgument::ReadParameters() {
 				for (rapidjson::SizeType i = 0; i < resample.Size(); ++i) {
 					resample_resolution_[i] = resample[i].GetDouble();
 				}
+				ready_resample_ = true;
 			}
 		}	
 	}

@@ -6,6 +6,9 @@
         0.1,
         0.1
     ],
+	"radius_outlier_remover": [radius, neighbers],
+	"static_outlier_remover": [neighbers, stddev],
+	
     "margin": [
         5,
         5,

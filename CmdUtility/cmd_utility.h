@@ -58,6 +58,13 @@ public:
 	//int margin_up_, margin_down_, margin_left_, margin_right_;
 	int margin_[4]; // up, down, left, right
 	double resample_resolution_[3];
+	double radius_outlier_remover_[2];
+	double statiscal_outlier_remover_[2];
+
+	bool ready_refine_grid_;
+	bool ready_resample_;
+	bool ready_radius_outlier_remover_;
+	bool ready_statiscal_outlier_remover_;
 
 	// result
 	std::string result_png_;

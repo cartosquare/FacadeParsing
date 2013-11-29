@@ -21,13 +21,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CalculateFeature", "Calcula
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CmdUtility", "CmdUtility\CmdUtility.vcxproj", "{6BA776B1-CF6C-46B0-A735-647D7211B8D4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PreparePcd", "PreparePcd\PreparePcd.vcxproj", "{48771D75-E9A3-44E4-A4B4-2877A60C2454}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PassThroughFilter", "PassThroughFilter\PassThroughFilter.vcxproj", "{5CE9EFFE-F650-459E-A557-CFA4765FDF50}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Downsample", "Downsample\Downsample.vcxproj", "{2E19875D-4982-4E38-BA79-3771369E7448}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDrivenClassify", "DataDrivenClassify\DataDrivenClassify.vcxproj", "{255F8377-9774-4264-8AFE-5E56E63279C8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OutlierRemover", "OutlierRemover\OutlierRemover.vcxproj", "{6711EF17-CE76-42DA-BE2F-7A75F25B1B63}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Txt2Pcd", "Txt2Pcd\Txt2Pcd.vcxproj", "{48771D75-E9A3-44E4-A4B4-2877A60C2454}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,10 +77,6 @@ Global
 		{6BA776B1-CF6C-46B0-A735-647D7211B8D4}.Debug|Win32.Build.0 = Debug|Win32
 		{6BA776B1-CF6C-46B0-A735-647D7211B8D4}.Release|Win32.ActiveCfg = Release|Win32
 		{6BA776B1-CF6C-46B0-A735-647D7211B8D4}.Release|Win32.Build.0 = Release|Win32
-		{48771D75-E9A3-44E4-A4B4-2877A60C2454}.Debug|Win32.ActiveCfg = Debug|Win32
-		{48771D75-E9A3-44E4-A4B4-2877A60C2454}.Debug|Win32.Build.0 = Debug|Win32
-		{48771D75-E9A3-44E4-A4B4-2877A60C2454}.Release|Win32.ActiveCfg = Release|Win32
-		{48771D75-E9A3-44E4-A4B4-2877A60C2454}.Release|Win32.Build.0 = Release|Win32
 		{5CE9EFFE-F650-459E-A557-CFA4765FDF50}.Debug|Win32.ActiveCfg = Debug|Win32
 		{5CE9EFFE-F650-459E-A557-CFA4765FDF50}.Debug|Win32.Build.0 = Debug|Win32
 		{5CE9EFFE-F650-459E-A557-CFA4765FDF50}.Release|Win32.ActiveCfg = Release|Win32
@@ -91,6 +89,14 @@ Global
 		{255F8377-9774-4264-8AFE-5E56E63279C8}.Debug|Win32.Build.0 = Debug|Win32
 		{255F8377-9774-4264-8AFE-5E56E63279C8}.Release|Win32.ActiveCfg = Release|Win32
 		{255F8377-9774-4264-8AFE-5E56E63279C8}.Release|Win32.Build.0 = Release|Win32
+		{6711EF17-CE76-42DA-BE2F-7A75F25B1B63}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6711EF17-CE76-42DA-BE2F-7A75F25B1B63}.Debug|Win32.Build.0 = Debug|Win32
+		{6711EF17-CE76-42DA-BE2F-7A75F25B1B63}.Release|Win32.ActiveCfg = Release|Win32
+		{6711EF17-CE76-42DA-BE2F-7A75F25B1B63}.Release|Win32.Build.0 = Release|Win32
+		{48771D75-E9A3-44E4-A4B4-2877A60C2454}.Debug|Win32.ActiveCfg = Debug|Win32
+		{48771D75-E9A3-44E4-A4B4-2877A60C2454}.Debug|Win32.Build.0 = Debug|Win32
+		{48771D75-E9A3-44E4-A4B4-2877A60C2454}.Release|Win32.ActiveCfg = Release|Win32
+		{48771D75-E9A3-44E4-A4B4-2877A60C2454}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
