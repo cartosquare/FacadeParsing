@@ -19,4 +19,4 @@
    |- TransformPointCloudTool: Tool to alin the point cloud to X-Y plane.
    |- ParsingEngine.sln: The Project Solution.
    |- key guid.txt: The key short cut when open a viewer in either program.
-   |- ReadMe.txt: Contains the describle of the directory tree.
+   |- ReadMe: Contains the describle of the directory tree.
