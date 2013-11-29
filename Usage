@@ -1,0 +1,24 @@
+A working fold should at least has a point cloud file(raw.pcd or raw.txt, in the later case, you should use PreparePcd tool to convert raw.txt to raw.pcd) , 
+a shape grammar file(grammar.json) and a parameter file(parameters.json).
+
+Here is the working flow:
+
+Step 1. If we don't have raw.pcd, instead, we only have raw.txt(in this file, each line contains the tree coordinate of a point, seperated by blank space). 
+We must Use PreparePcd tool to convert .txt to .pcd.The output of this step is raw.pcd. In this tool, we also remove the outliers in the original point cloud.
+
+Step 2. Use Downsample tool to downsample the point cloud if need. The result will overwrite the original raw.pcd, so always save a copy before you excute this tool!.
+
+Step 3. Use TransformPointCloudTool to alignn the point cloud file to X-Y plane.
+This step will produce two files: The transformed point cloud plane(pt.pcd) and transformed raw point cloud(rt.pcd).
+
+Step 4. Use PassthroughFilter to filter the pt.pcd by axe range(optional).
+
+Step 5. Use CreateGridTool to create facade grid from the transformed point cloud plane. This step will produce these files: files that begin with grid_. Note: the resolution parameter should be defined in the parameters.json!
+
+Step 6. Use ReviseGridTool to refine the grid. This step will produce these files: files that begin with revise_grid_.Note: The margin_up, margin_down, margin_left and margin_right parameters in the parameter.txt shuld be defined!
+
+Step 7. Use CalculateFeature tool to calculate the feature so as to extract the action parameter space. This step will produce these files: files that begin with action.
+
+Step 8. Use ParsingFacadeTool to learn the parsing result. Note: the episodes, load_qtable parameters should be defined in the parameters.json! This step will produce these files: files that begin with result.
+
+Step 9. Use CompareResultTool to see the original point cloud and learning result at the same time. Refer to the key guid to see how to use different screen short cuts.
