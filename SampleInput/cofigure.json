@@ -1,0 +1,16 @@
+{
+    "episodes": 10000,
+    "resolution": 0.2,
+    "resample": [
+        0.1,
+        0.1,
+        0.1
+    ],
+    "margin": [
+        5,
+        5,
+        5,
+        5
+    ],
+    "load_qtable": 0
+}
