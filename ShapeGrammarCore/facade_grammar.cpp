@@ -91,9 +91,9 @@ bool FacadeGrammar::ReadGrammar ( std::string& configure_file )
 			shape_grammar.left_hand_symbol_ = grammar["parent"].GetString();
 			shape_grammar.right_hand_symbol1_ = grammar["child1"].GetString();
 			shape_grammar.right_hand_symbol2_ = grammar["child2"].GetString();
-			shape_grammar.parameter_min = grammar["parameter"][rapidjson::SizeType(0)].GetInt();
-			shape_grammar.parameter_max = grammar["parameter"][rapidjson::SizeType(1)].GetInt();
-			shape_grammar.exception_symbol = grammar["exception"].GetString();
+			shape_grammar.parameter_min_ = grammar["parameter"][rapidjson::SizeType(0)].GetInt();
+			shape_grammar.parameter_max_ = grammar["parameter"][rapidjson::SizeType(1)].GetInt();
+			shape_grammar.exception_symbol_ = grammar["exception"].GetString();
 
 			grammar_set_.push_back(shape_grammar);
 		}
@@ -171,12 +171,12 @@ void FacadeGrammar::SaveGrammar ( std::string& configure_file )
 		fs << grammar_set_[i].right_hand_symbol2_;
 
 		fs << "Parameter_Min";
-		fs << grammar_set_[i].parameter_min;
+		fs << grammar_set_[i].parameter_min_;
 		fs << "Parameter_Max";
-		fs << grammar_set_[i].parameter_max;
+		fs << grammar_set_[i].parameter_max_;
 
 		fs << "Exception_Symbol";
-		fs << grammar_set_[i].exception_symbol;
+		fs << grammar_set_[i].exception_symbol_;
 
 		fs << "}";
 	}
@@ -232,12 +232,12 @@ void FacadeGrammar::PrintGrammars()
 		std::cout << grammar_set_[i].right_hand_symbol2_;
 
 		std::cout << "]\n\nParameter_Min\n[";
-		std::cout << grammar_set_[i].parameter_min;
+		std::cout << grammar_set_[i].parameter_min_;
 		std::cout << "]\n\nParameter_Max\n[";
-		std::cout << grammar_set_[i].parameter_max;
+		std::cout << grammar_set_[i].parameter_max_;
 
 		std::cout << "]\n\nException_Symbol\n[";
-		std::cout << grammar_set_[i].exception_symbol;
+		std::cout << grammar_set_[i].exception_symbol_;
 
 		std::cout << "]\n}\n\n";
 	}

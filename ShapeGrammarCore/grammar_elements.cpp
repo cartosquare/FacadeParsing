@@ -71,7 +71,7 @@ bool ShapeSymbol::DoSplit ( SplitAction& split_action, std::shared_ptr<ShapeSymb
 		if((split_parameter + position_y_) >= height) // split fail...
 		{
 			right_symbol_1->SetScope(this->position_x_, this->position_y_, this->width_, this->height_);
-			right_symbol_1->set_symbol_name(shape_grammar.exception_symbol);
+			right_symbol_1->set_symbol_name(shape_grammar.exception_symbol_);
 
 			return false;
 		}
@@ -92,7 +92,7 @@ bool ShapeSymbol::DoSplit ( SplitAction& split_action, std::shared_ptr<ShapeSymb
 		if((split_parameter + position_x_) >= width) // split fail ... 
 		{
 			right_symbol_1->SetScope(this->position_x_, this->position_y_, this->width_, this->height_);
-			right_symbol_1->set_symbol_name(shape_grammar.exception_symbol);
+			right_symbol_1->set_symbol_name(shape_grammar.exception_symbol_);
 
 			return false;
 		}

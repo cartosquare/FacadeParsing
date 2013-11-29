@@ -199,7 +199,7 @@ int FacadeModel::InitActionMap()
 		count++;
 #endif
 
-		for ( int j = static_cast<int>(sg.parameter_min); j <= static_cast<int>(sg.parameter_max); ++j )
+		for ( int j = static_cast<int>(sg.parameter_min_); j <= static_cast<int>(sg.parameter_max_); ++j )
 		{
 			SplitAction sa (sg.grammar_name_, j, i);
 

@@ -16,8 +16,8 @@ struct ShapeGrammar {
 	std::string left_hand_symbol_;			/*!< Left hand symbol. */
 	std::string right_hand_symbol1_;		/*!< First right hand symbol. */
 	std::string right_hand_symbol2_;		/*!< Second right hand symbol. */
-	std::string exception_symbol;			/*!< Exception symbol. */
-	double parameter_min, parameter_max;	/*!< Parameter range. */
+	std::string exception_symbol_;			/*!< Exception symbol. */
+	double parameter_min_, parameter_max_;	/*!< Parameter range. */
 };
 
 

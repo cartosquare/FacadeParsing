@@ -1,0 +1,101 @@
+{
+    "atom": "facade",
+    "terminal": [
+        {
+            "name": "wall",
+            "color": [
+                120,
+                120,
+                120
+            ]
+        },
+        {
+            "name": "window",
+            "color": [
+                0,
+                0,
+                255
+            ]
+        }
+    ],
+    "unterminal": [
+        "facadeWall",
+        "facadeFloor",
+        "floorWall",
+        "floorWindow"
+    ],
+    "grammar": [
+        {
+            "name": "facade -> wall + facadeFloor",
+            "direction": 0,
+            "parent": "facade",
+            "child1": "wall",
+            "child2": "facadeFloor",
+            "parameter": [
+                1,
+                50
+            ],
+            "exception": "wall"
+        },
+        {
+            "name": "facade -> floorWall + facadeWall",
+            "direction": 0,
+            "parent": "facade",
+            "child1": "floorWall",
+            "child2": "facadeWall",
+            "parameter": [
+                1,
+                50
+            ],
+            "exception": "wall"
+        },
+        {
+            "name": "facadeFloor -> floorWall + facadeWall",
+            "direction": 0,
+            "parent": "facadeFloor",
+            "child1": "floorWall",
+            "child2": "facadeWall",
+            "parameter": [
+                1,
+                50
+            ],
+            "exception": "wall"
+        },
+        {
+            "name": "facadeWall -> wall + facadeFloor",
+            "direction": 0,
+            "parent": "facadeWall",
+            "child1": "wall",
+            "child2": "facadeFloor",
+            "parameter": [
+                1,
+                50
+            ],
+            "exception": "wall"
+        },
+        {
+            "name": "floorWall -> wall + floorWindow",
+            "direction": 1,
+            "parent": "floorWall",
+            "child1": "wall",
+            "child2": "floorWindow",
+            "parameter": [
+                1,
+                50
+            ],
+            "exception": "wall"
+        },
+        {
+            "name": "floorWindow -> window + floorWall",
+            "direction": 1,
+            "parent": "floorWindow",
+            "child1": "window",
+            "child2": "floorWall",
+            "parameter": [
+                1,
+                50
+            ],
+            "exception": "wall"
+        }
+    ]
+}

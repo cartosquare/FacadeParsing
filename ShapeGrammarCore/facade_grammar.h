@@ -14,17 +14,17 @@ public:
 	FacadeGrammar();
 	~FacadeGrammar();
 
-	//! Load the facade grammar from the xml file.
+	//! Load the facade grammar from the json file.
 	/*!
-	\param configure_file The file name of the xml file.
+	\param configure_file The file name of the json file.
 	*/
-	bool ReadGrammar ( std::string& configure_file );
+	bool ReadGrammar(std::string& configure_file );
 
 	//! Save the facade grammar to the xml file.
 	/*!
 	\param configure_file The file name of the xml file.
 	*/
-	void SaveGrammar ( std::string& configure_file );
+	void SaveGrammar(std::string& configure_file );
 
 	//! Print the facade grammar to the console.
 	void PrintGrammars();
