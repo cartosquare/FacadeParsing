@@ -1,0 +1,22 @@
+|- ParsingEngine: The Root Directory.
+   |- 3rd: Contains third party libraries.
+   |- CalculateFeature: Tool for calculating point cloud features.
+   |- CmdUtility: Tool for Parsing command line arguments and initialize 	algorithm parameters.
+   |- CompareResultTool: Tool for comparing the parsing result and original 	point 	cloud.
+   |- CreateGridTool: Tool for creating the building grid using the 	transformed build 	point cloud plane.
+   |- Debug: Contains the .exe programs.
+   |- Doc: Contains the Doxygen documents.
+   |- Experiments: Contains all the experiments data.
+   |- ParsingFacadeTool: Tool Using the reforcement learning and shape grammar to 	parse the building facade.
+   |- PclCore: Wrap of the PCL lib for some often used functions.
+   |- RawData: This folder contains the original point cloud data.
+   |- ReinforcementLearningCore: The reforcement learning lib.
+   |- ResultGallery: Contains the parsing result of each experiment.
+   |- ReviseGridTool: Tool to refine the grid manually.
+   |- ShapeGrammarCore: The shape grammar lib.
+   |- TestResults: The unit test result.
+   |- TestShapeGrammar: A project to test the shape grammar lib.
+   |- TransformPointCloudTool: Tool to alin the point cloud to X-Y plane.
+   |- ParsingEngine.sln: The Project Solution.
+   |- key guid.txt: The key short cut when open a viewer in either program.
+   |- ReadMe.txt: Contains the describle of the directory tree.
