@@ -125,7 +125,7 @@ void FacadeGeography::CreateGridFromPointCloud(pcl::PointCloud<pcl::PointXYZ>::P
 			pcl::getPointsInBox(*facade_cloud, min_pt, max_pt, indices);
 
 			assert(indices.size() >= 0);
-
+#if 0
 			if (indices.size() <= 1) // window
 			{
 				SetProperty(i, j, 1, 1);
@@ -152,7 +152,7 @@ void FacadeGeography::CreateGridFromPointCloud(pcl::PointCloud<pcl::PointXYZ>::P
 					SetProperty(i, j, 0, 1); // wall
 				}
 			}
-
+#endif
 			indices.clear();
 			++display;
 		}

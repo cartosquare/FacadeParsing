@@ -84,16 +84,45 @@ bool FacadeGrammar::ReadGrammar ( std::string& configure_file )
 		if (!grammar.IsArray()) 
 			return false;
 		for (int i = 0; i < grammar.Size(); ++i) {
-			grammar_names_.push_back(grammar["name"].GetString());
+			const rapidjson::Value& grammar_object = grammar[i];
+			if (!grammar_object.IsObject())
+				return false;
+		
 			ShapeGrammar shape_grammar;
-			shape_grammar.grammar_name_ = grammar["name"].GetString();
-			shape_grammar.apply_direction_ = grammar["direction"].GetInt();
-			shape_grammar.left_hand_symbol_ = grammar["parent"].GetString();
-			shape_grammar.right_hand_symbol1_ = grammar["child1"].GetString();
-			shape_grammar.right_hand_symbol2_ = grammar["child2"].GetString();
-			shape_grammar.parameter_min_ = grammar["parameter"][rapidjson::SizeType(0)].GetInt();
-			shape_grammar.parameter_max_ = grammar["parameter"][rapidjson::SizeType(1)].GetInt();
-			shape_grammar.exception_symbol_ = grammar["exception"].GetString();
+			if (grammar_object.HasMember("name")) {
+				shape_grammar.grammar_name_ = grammar_object["name"].GetString();
+				grammar_names_.push_back(grammar_object["name"].GetString());
+			}
+			else {
+				return false;
+			}
+			if (grammar_object.HasMember("direction"))
+				shape_grammar.apply_direction_ = grammar_object["direction"].GetInt();
+			else
+				return false;
+			if (grammar_object.HasMember("parent"))
+				shape_grammar.left_hand_symbol_ = grammar_object["parent"].GetString();
+			else
+				return false;
+			if (grammar_object.HasMember("child1"))
+				shape_grammar.right_hand_symbol1_ = grammar_object["child1"].GetString();
+			else
+				return false;
+			if (grammar_object.HasMember("child2"))
+				shape_grammar.right_hand_symbol2_ = grammar_object["child2"].GetString();
+			else
+				return false;
+			if (grammar_object.HasMember("parameter")) {
+				shape_grammar.parameter_min_ = grammar_object["parameter"][rapidjson::SizeType(0)].GetInt();
+				shape_grammar.parameter_max_ = grammar_object["parameter"][rapidjson::SizeType(1)].GetInt();
+			}
+			else {
+				return false;
+			}
+			if (grammar_object.HasMember("exception"))
+				shape_grammar.exception_symbol_ = grammar_object["exception"].GetString();
+			else
+				return false;
 
 			grammar_set_.push_back(shape_grammar);
 		}
